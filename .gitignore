@@ -6,6 +6,7 @@ node_modules/
 npm-debug.log
 
 static/index.min.*
+coverage/
 
 # bem
 .enb/tmp/

@@ -1,19 +1,30 @@
 {
-  "name": "bemder",
+  "name": "express-bem-xjst-renderer",
   "version": "0.1.0",
-  "description": "BEM renDER plugin for Express",
+  "description": "BEM render plugin for Express",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "",
+    "testci": "node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report text-summary"
   },
   "keywords": [
-    "BEM",
+    "bemxjst",
     "express",
-    "plugin"
+    "plugin",
+    "render"
   ],
   "author": "Ya",
   "license": "ISC",
   "dependencies": {
-    "bem-xjst": "^8.3.1"
+    "bem-xjst": "^8.3.1",
+    "mz": "^2.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coveralls": "^2.11.15",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.2.0"
   }
 }
